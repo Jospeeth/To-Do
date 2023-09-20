@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="/public/img/favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <title>To Do</title>
+</head>
+
+<body>
+  <div id="app">
+    <main>
+      <div class="main-todo">
+        <div class="task-header">
+          <div class="cosa">
+            <h1>To Do 📝</h1>
+            <span id="date"></span>
+          </div>
+          <input class="search" type="search" placeholder="Search task">
+        </div>
+        <div class="task-list">
+          <div class="options">
+            <button class="img-button"><img class="option" src="public/img/notes.svg" alt="list"></button>
+            <button class="img-button"><img class="option" src="public/img/checklist.svg" alt="list"></button>
+          </div>
+          <ul id="list-todo">
+            <li>Buy groceries</li>
+          </ul>
+        </div>
+        <button onclick="showModal()">Add Task</button>
+
+
+      </div>
+    </main>
+  </div>
+<!-- modal -->
+  <div id="miModal" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar-modal" onclick="closeModal()">&times;</span>
+      <h2>Add task</h2>
+      <hr>
+      <input id="input-task" class="input-modal" type="text" placeholder="Add task">
+      <button onclick="saveTask()">Save</button>
+    </div>
+  </div>
+
+  <script type="module" src="/date.js"></script>
+  <script src="/modal.js"></script>
+  <script src="/toDo.js"></script>
+
+</body>
+
+</html>
