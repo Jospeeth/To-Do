@@ -33,9 +33,9 @@ main {
 h1 {
   margin: 0;
 }
-h2{
-  margin:0;
-  color:rgb(113, 42, 255)
+h2 {
+  margin: 0;
+  color: rgb(113, 42, 255);
 }
 .main-todo {
   width: 50%;
@@ -85,18 +85,23 @@ h2{
   margin: auto;
   margin-top: 1rem;
   display: flex;
-  text-align: center ;
+  text-align: center;
   flex-direction: column;
   width: 40%;
- 
 }
 ul {
-  text-align: left;
-  border: 1px solid rgb(255, 255, 255);
-  border-radius: 15px;
-  padding: 2rem;
+  display: flex;
+  padding: 0;
+  flex-direction: column;
+
+  justify-content: center;
 }
-button{
+li {
+  list-style: none;
+  font-weight: 500;
+  font-size: 1rem;
+}
+button {
   cursor: pointer;
   margin-bottom: 1rem;
   font-weight: 600;
@@ -104,10 +109,10 @@ button{
   border: none;
   padding: 0.5rem;
   border-radius: 10px;
-  color:white
+  color: white;
 }
-button:hover{
-opacity: 0.5
+button:hover {
+  opacity: 0.5;
 }
 
 #app {
@@ -116,7 +121,7 @@ opacity: 0.5
   padding: 2rem;
   text-align: center;
 }
-.cosa{
+.cosa {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -150,7 +155,7 @@ opacity: 0.5
   font-size: 20px;
   cursor: pointer;
 }
-.input-modal{
+.input-modal {
   margin: 1rem;
   padding: 0.5rem;
   border: none;
@@ -163,10 +168,19 @@ opacity: 0.5
 .input-modal:hover {
   border: 1px solid #712aff;
 }
-hr{
+hr {
   border: 0.5px solid #712aff;
 }
-.img-button{
+.img-button {
   max-width: 100%;
   margin: 0 auto;
+}
+span {
+  font-size: 1.5rem;
+
+  padding: 1rem;
+}
+.checked {
+  opacity: 0.5; /* Cambia la opacidad como desees */
+  text-decoration: line-through; /* Puedes agregar un estilo de tachado si lo deseas */
 }
