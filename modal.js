@@ -12,6 +12,12 @@ function saveTask() {
   modal.style.display = "none";
 }
 
+  document.getElementById("input-task").addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        saveTask();
+    }
+});
+
 
 modal.addEventListener("click", function (event) {
   if (event.target === modal) {

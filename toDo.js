@@ -16,6 +16,7 @@ function saveTask() {
 
     let elementList = document.createElement("li");
     elementList.textContent = task;
+    
     document.getElementById("input-task").value = "";
     let lista = document.getElementById("list-todo");
     lista.appendChild(elementList);
