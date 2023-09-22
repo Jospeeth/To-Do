@@ -4,23 +4,23 @@ function showModal() {
   modal.style.display = "block";
 }
 
- function closeModal() {
+export function closeModal() {
   modal.style.display = "none";
 }
 
-function saveTask() {
-  modal.style.display = "none";
-}
 
-  document.getElementById("input-task").addEventListener("keyup", function(event) {
+  document.getElementById("input-task").addEventListener("keyup", (event)=> {
     if (event.key === "Enter") {
-        saveTask();
+      closeModal();
     }
 });
 
 
-modal.addEventListener("click", function (event) {
+modal.addEventListener("click", (event)=> {
   if (event.target === modal) {
     closeModal();
   }
+});
+document.getElementById("addTaskButton").addEventListener("click",()=> {
+  showModal();
 });

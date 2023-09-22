@@ -1,9 +1,10 @@
-const modal1 = document.getElementById("miModal");
 const tasks = [];
+// const modal1 = document.getElementById("miModal");
 
-function closeModal() {
-  modal1.style.display = "none";
-}
+// function closeModal() {
+//   modal1.style.display = "none";
+// }
+import { closeModal } from "./modal";
 function saveTask() {
   const task = document.getElementById("input-task").value;
   
@@ -37,5 +38,11 @@ function saveTask() {
     closeModal();
   }
 }
+
+document.getElementById("saveTaskButton").addEventListener("click", ()=> {
+  saveTask();
+  closeModal();
+});
+
 
 
