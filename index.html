@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo app</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="/public/img/favicon.png">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body">
   <div class="flex justify-center inset-0 -z-10 h-full w-full bg-white bg-gradient-to-br from-white to-blue-300">
-    <main class="flex flex-col mt-2 absolute">
-      <h1 class="text-3xl font-bold mb-6">Todo App</h1>
+    <main class="flex flex-col mt-8 absolute">
+      <h1 class="text-3xl font-bold mb-6">Todo App · <span id="date"></span></h1> 
       <div class="todo-app ">
         <button id="open-task-form-btn" class="btn large-btn bg-blue-500 text-white">
           Add New Task
@@ -57,5 +58,6 @@
     </main>
   </div>
 </body>
+<script src="date.js"></script>
 <script src="main.js"></script>
 </html>

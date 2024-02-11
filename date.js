@@ -1,14 +1,14 @@
 
-  let fechaActual = new Date();
+  let currentDate = new Date();
 
   
-  let dia = fechaActual.getDate();
-  let mes = fechaActual.getMonth() + 1; 
-  let año = fechaActual.getFullYear();
+  let day = currentDate.getDate();
+  let month = currentDate.getMonth() + 1; 
+  let year = currentDate.getFullYear();
 
   
-  let fechaFormateada = dia + ' ' + mes + ', ' + año;
+  let formatData = day + ' ' + '0' + month + ', ' + year;
 
 
-  document.getElementById('date').textContent = fechaFormateada;
+  document.getElementById('date').textContent = formatData;
 
