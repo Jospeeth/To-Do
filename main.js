@@ -41,12 +41,12 @@ const updateTaskContainer = () => {
   taskData.forEach(
     ({ id, title, date, description }) => {
         (tasksContainer.innerHTML += `
-        <div class="task border-2 p-3 gap-4" id="${id}">
+        <div class="task border-2 rounded-md p-3 " id="${id}">
           <p><strong>Title:</strong> ${title}</p>
           <p><strong>Date:</strong> ${date}</p>
           <p><strong>Description:</strong> ${description}</p>
-          <button onclick="editTask(this)" type="button" class="btn btn bg-green-500 text-white">Edit</button>
-          <button onclick="deleteTask(this)" type="button" class="btn btn bg-red-500 text-white">Delete</button>
+          <button onclick="editTask(this)" type="button" class="btn btn bg-green-400 text-white">Edit</button>
+          <button onclick="deleteTask(this)" type="button" class="btn btn bg-red-400 text-white">Delete</button>
           
 
         </div>
@@ -122,4 +122,7 @@ taskForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
   addOrUpdateTask();
+});
+document.addEventListener("DOMContentLoaded", function() {
+  updateTaskContainer();
 });
