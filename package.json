@@ -1,5 +1,5 @@
 {
-  "name": "to-do-list",
+  "name": "todo-list",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,6 +9,6 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^4.4.5"
+    "vite": "^5.1.0"
   }
 }
