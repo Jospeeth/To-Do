@@ -1,47 +1,49 @@
-import { addOrUpdateTask, reset, updateTaskContainer } from './tasks.js';
-import{ taskForm,
- confirmCloseDialog, 
- openTaskFormBtn, 
- closeTaskFormBtn, 
- addOrUpdateTaskBtn ,
- cancelBtn, 
- discardBtn ,
- tasksContainer, 
- titleInput, 
- dateInput, 
- descriptionInput,
- modal,
- taskData, 
- currentTask} from './constants.js'
+import { addOrUpdateTask, reset, updateTaskContainer } from "./tasks.js";
+import {
+  taskForm,
+  confirmCloseDialog,
+  openTaskFormBtn,
+  closeTaskFormBtn,
+  cancelBtn,
+  discardBtn,
+  titleInput,
+  dateInput,
+  descriptionInput,
+  modal,
+  currentTask,
+} from "./constants.js";
 
-
-openTaskFormBtn.addEventListener("click", () => modal.classList.toggle("hidden"));
+openTaskFormBtn.addEventListener("click", () =>
+  modal.classList.toggle("hidden")
+);
 
 closeTaskFormBtn.addEventListener("click", () => {
-  
-    const formInputsContainValues = titleInput.value || dateInput.value || descriptionInput.value;
-    const formInputValuesUpdated = titleInput.value !== currentTask.title || dateInput.value !== currentTask.date || descriptionInput.value !== currentTask.description;
-  
-    if (formInputsContainValues && formInputValuesUpdated) {
-      confirmCloseDialog.showModal();
-    } else {
-      
-      reset();
-    }
-  });
+  const formInputsContainValues =
+    titleInput.value || dateInput.value || descriptionInput.value;
+  const formInputValuesUpdated =
+    titleInput.value !== currentTask.title ||
+    dateInput.value !== currentTask.date ||
+    descriptionInput.value !== currentTask.description;
+
+  if (formInputsContainValues && formInputValuesUpdated) {
+    confirmCloseDialog.showModal();
+  } else {
+    reset();
+  }
+});
 
 cancelBtn.addEventListener("click", () => confirmCloseDialog.close());
 
 discardBtn.addEventListener("click", () => {
-    confirmCloseDialog.close();
-    reset()
-  });
+  confirmCloseDialog.close();
+  reset();
+});
 
 taskForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    addOrUpdateTask();
+  e.preventDefault();
+  addOrUpdateTask();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    updateTaskContainer();
+  updateTaskContainer();
 });
