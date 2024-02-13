@@ -8,6 +8,7 @@ import {
   taskData,
   currentTask,
 } from "./constants.js";
+import { formatData } from "./date.js";
 const addOrUpdateTask = () => {
   addOrUpdateTaskBtn.innerText = "Add Task";
   const dataArrIndex = taskData.findIndex((item) => item.id === currentTask.id);
@@ -15,6 +16,7 @@ const addOrUpdateTask = () => {
     id: `${titleInput.value.toLowerCase().split(" ").join("-")}-${Date.now()}`,
     title: titleInput.value,
     date: dateInput.value,
+    created: formatData,
     description: descriptionInput.value,
   };
 
@@ -32,7 +34,7 @@ const addOrUpdateTask = () => {
 const updateTaskContainer = () => {
     tasksContainer.innerHTML = "";
   
-    taskData.forEach(({ id, title, date, description }) => {
+    taskData.forEach(({ id, title, date,created, description }) => {
         
       const taskElement = document.createElement('div');
       taskElement.classList.add("task", "border-2", "rounded-md", "p-3");
@@ -40,6 +42,8 @@ const updateTaskContainer = () => {
       taskElement.innerHTML = `
         <p><strong>Title:</strong> ${title}</p>
         <p><strong>Date:</strong> ${date}</p>
+        <p><strong>Created:</strong> ${created}</p>
+
         <p><strong>Description:</strong> ${description}</p>
         <button id="edit-btn-${id}" type="button" class="btn btn bg-green-400 text-white">Edit</button>
         <button id="delete-btn-${id}" type="button" class="btn btn bg-red-400 text-white">Delete</button>
@@ -73,9 +77,9 @@ const editTask = (taskId) => {
 
   currentTask = taskData[dataArrIndex];
 
-  titleInput.value = [dataArrIndex].title;
-  dateInput.value = [dataArrIndex].date;
-  descriptionInput.value = [dataArrIndex].description;
+  titleInput.value = currentTask.title;
+  dateInput.value = currentTask.date;
+  descriptionInput.value = currentTask.description;
 
   addOrUpdateTaskBtn.innerText = "Update Task";
 

@@ -7,7 +7,7 @@
   let year = currentDate.getFullYear();
 
   
-  let formatData = day + ' ' + '0' + month + ', ' + year;
+ export let formatData = year + '-' + '0' + month + '-' +day ;
 
 
   document.getElementById('date').textContent = formatData;
