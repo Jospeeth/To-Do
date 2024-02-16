@@ -65,9 +65,9 @@ const updateTaskContainer = () => {
   
     if (dataArrIndex !== -1) {
       const taskElement = document.getElementById(taskId);
-      taskElement.remove(); // Remove the task from DOM
-      taskData.splice(dataArrIndex, 1); // Remove the task from the array
-      localStorage.setItem("data", JSON.stringify(taskData)); // Update localStorage
+      taskElement.remove(); 
+      taskData.splice(dataArrIndex, 1); 
+      localStorage.setItem("data", JSON.stringify(taskData)); 
     }
   };
   
