@@ -5,10 +5,11 @@ import {
   dateInput,
   descriptionInput,
   modal,
-  taskData,
-  currentTask,
+  taskData
 } from "./constants.js";
 import { formatData } from "./date.js";
+let currentTask = {};
+
 const addOrUpdateTask = () => {
   addOrUpdateTaskBtn.innerText = "Add Task";
   const dataArrIndex = taskData.findIndex((item) => item.id === currentTask.id);
@@ -72,19 +73,18 @@ const updateTaskContainer = () => {
   
   
 
-// const editTask = (taskId) => {
-//     const dataArrIndex = taskData.findIndex((item) => item.id === taskId);
+ const editTask = (taskId) => {
+    const dataArrIndex = taskData.findIndex((item) => item.id === taskId);
 
-//   currentTask = taskData[dataArrIndex];
+   currentTask = taskData[dataArrIndex];
+   titleInput.value = currentTask.title;
+   dateInput.value = currentTask.date;
+  descriptionInput.value = currentTask.description;
 
-//   titleInput.value = currentTask.title;
-//   dateInput.value = currentTask.date;
-//   descriptionInput.value = currentTask.description;
+  addOrUpdateTaskBtn.innerText = "Update Task";
 
-//   addOrUpdateTaskBtn.innerText = "Update Task";
-
-//   modal.classList.toggle("hidden");
-// }
+  modal.classList.toggle("hidden");
+ }
 const reset = () => {
   titleInput.value = "";
   dateInput.value = "";
@@ -92,4 +92,4 @@ const reset = () => {
   modal.classList.toggle("hidden");
 };
 
-export { addOrUpdateTask, updateTaskContainer, deleteTask, editTask, reset };
+export { addOrUpdateTask, updateTaskContainer, deleteTask, editTask, reset, currentTask };

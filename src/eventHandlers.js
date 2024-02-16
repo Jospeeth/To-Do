@@ -1,4 +1,4 @@
-import { addOrUpdateTask, reset, updateTaskContainer } from "./tasks.js";
+import { addOrUpdateTask, reset, updateTaskContainer,currentTask } from "./tasks.js";
 import {
   taskForm,
   confirmCloseDialog,
@@ -9,8 +9,7 @@ import {
   titleInput,
   dateInput,
   descriptionInput,
-  modal,
-  currentTask,
+  modal
 } from "./constants.js";
 
 openTaskFormBtn.addEventListener("click", () =>

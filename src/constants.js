@@ -12,7 +12,6 @@ const descriptionInput = document.getElementById("description-input");
 const modal = document.getElementById("modal");
 
 const taskData = JSON.parse(localStorage.getItem("data")) || [];
-let currentTask = {};
 
 export {
   taskForm,
@@ -27,6 +26,5 @@ export {
   dateInput,
   descriptionInput,
   taskData,
-  modal,
-  currentTask,
+  modal
 };
